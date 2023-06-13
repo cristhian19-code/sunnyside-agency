@@ -1,0 +1,26 @@
+---
+import Card from "../Card.astro";
+
+const cards = [
+  {
+    title: "Graphic Design",
+    content:
+      "Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients´ attention.",
+    image: "/desktop/image-graphic-design.jpg",
+  },
+  {
+    title: "Photography",
+    content:
+      "Increase your credibility by getting the most stunning. high-quality Photos that improve your business image.",
+    image: "/desktop/image-photography.jpg",
+  },
+];
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 relative h-full">
+  {
+    cards.map((item) => (
+      <Card title={item.title} content={item.content} image={item.image} />
+    ))
+  }
+</section>

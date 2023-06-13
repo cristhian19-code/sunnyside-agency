@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  content: string;
+  image: string;
+  reverse: boolean | false;
+}
+
+const { title, content, image, reverse } = Astro.props;
+---
+
+<section class="relative grid grid-cols-1 lg:grid-cols-2">
+  <div
+    class={`py-24 px-5 lg:px-40 order-2 ${
+      reverse ? "lg:order-2" : ""
+    } flex flex-col justify-center text-center lg:text-start`}
+  >
+    <h2 class="font-extrabold text-2xl font-serif">{title}</h2>
+    <p class="text-xs my-7 font-medium text-gray-500">
+      {content}
+    </p>
+    <a class="font-serif font-bold text-sm" href="">LEARN MORE</a>
+  </div>
+  <div class={`${reverse ? "" : "lg:order-2"} order-1`}>
+    <img class="w-full" src={image} alt="" />
+  </div>
+</section>

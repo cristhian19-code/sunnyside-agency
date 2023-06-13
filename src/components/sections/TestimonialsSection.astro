@@ -1,0 +1,47 @@
+---
+import Client from "../Client.astro";
+
+const testimonials = [
+  {
+    name: "Emili R.",
+    testimony:
+      "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+    profession: "Marketing Director",
+    image: "/image-emily.jpg",
+  },
+  {
+    name: "Tomas S.",
+    testimony:
+      "Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.",
+    profession: "Chief Operating Officer",
+    image: "/image-thomas.jpg",
+  },
+  {
+    name: "Jennie F.",
+    testimony:
+      "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+    profession: "Business Owner",
+    image: "/image-jennie.jpg",
+  },
+];
+---
+
+<section
+  class="pt-10 lg:pt-0 lg:h-screen flex flex-col justify-center items-center"
+>
+  <h1 class="text-center font-serif text-gray-400 font-semibold mb-10 text-xl">
+    CLIENT TESTIMONIALS
+  </h1>
+  <div class="grid grid-cols-1 lg:grid-cols-3 lg:px-10">
+    {
+      testimonials.map((client) => (
+        <Client
+          name={client.name}
+          testimony={client.testimony}
+          profession={client.profession}
+          image={client.image}
+        />
+      ))
+    }
+  </div>
+</section>

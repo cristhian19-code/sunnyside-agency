@@ -1,0 +1,19 @@
+---
+export interface Props {
+  name: string;
+  testimony: string;
+  profession: string;
+  image: string;
+}
+
+const { name, testimony, profession, image } = Astro.props;
+---
+
+<div class="flex flex-col justify-center items-center p-5">
+  <img class="rounded-full h-20 w-20" src={image} alt="" />
+  <p class="text-center my-10 px-7 text-sm font-medium text-gray-600">
+    {testimony}
+  </p>
+  <h2 class="font-serif font-extrabold text-lg mb-2">{name}</h2>
+  <p class="text-gray-400 text-xs">{profession}</p>
+</div>
