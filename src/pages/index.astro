@@ -1,11 +1,14 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 
-import CustomSection from "../components/sections/CustomSection.astro";
-
+// Sections
 import ServicesSection from "../components/sections/ServicesSection.astro";
 import TestimonialsSection from "../components/sections/TestimonialsSection.astro";
+import ImagesSection from "../components/sections/ImagesSection.astro";
+import CustomSection from "../components/sections/CustomSection.astro";
+
 const sections = [
   {
     title: "Transform your brand",
@@ -23,8 +26,9 @@ const sections = [
 ---
 
 <Layout title="Sunnyside">
+  <Navbar />
+
   <main class="flex flex-col">
-    <Navbar />
     <section class="relative w-full h-screen">
       <div class="h-full w-full absolute top-0 bottom-0">
         <img
@@ -56,7 +60,8 @@ const sections = [
 
     <ServicesSection />
     <TestimonialsSection />
+    <ImagesSection />
+
+    <Footer />
   </main>
 </Layout>
-
-<style></style>
